@@ -1,0 +1,287 @@
+.home {
+  min-height: 100vh;
+  background: #f8f8f8;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #fff1e6;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 800px;
+}
+
+.hero-small {
+  color: #e63946;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  line-height: 1.15;
+  margin: 10px 0;
+  color: #222;
+}
+
+.hero-text {
+  font-size: 18px;
+  color: #666;
+  margin: 20px 0;
+}
+
+.order-btn {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  background: #e63946;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background: #c92f3b;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+  padding: 50px 7%;
+  text-align: center;
+}
+
+.categories h2,
+.popular-food h2 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.section-text {
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background: white;
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.category-card h3 {
+  margin: 10px 0 15px;
+}
+
+.category-card button {
+  border: none;
+  padding: 9px 15px;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+}
+
+.category-card button:hover {
+  background: #e63946;
+}
+
+
+/* =========================
+   POPULAR FOOD
+========================= */
+
+.popular-food {
+  padding: 50px 7%;
+  text-align: center;
+  background: #fff;
+}
+
+.food-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.food-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.food-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #fff1e6;
+}
+
+.food-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.food-info {
+  padding: 18px;
+  text-align: left;
+}
+
+.food-info h3 {
+  margin: 0 0 5px;
+}
+
+.food-info p {
+  color: #777;
+}
+
+.food-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.food-info button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #e63946;
+  color: white;
+  cursor: pointer;
+}
+
+.food-info button:hover {
+  background: #c92f3b;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .food-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 50px 15px;
+    min-height: auto;
+  }
+
+  .hero-small {
+    font-size: 14px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .order-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .categories,
+  .popular-food {
+    padding: 40px 15px;
+  }
+
+  .categories h2,
+  .popular-food h2 {
+    font-size: 28px;
+  }
+
+  .category-list,
+  .food-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .category-card {
+    padding: 20px;
+  }
+
+  .food-image {
+    height: 200px;
+  }
+}
+
+.category-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

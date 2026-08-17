@@ -1,0 +1,117 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  background: #222;
+  color: white;
+  padding: 45px 7% 20px;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  margin: 0 0 15px;
+}
+
+.footer-section p {
+  color: #ccc;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 6px 0;
+}
+
+.footer-section a:hover {
+  color: #e63946;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #444;
+  margin-top: 35px;
+  padding-top: 20px;
+}
+
+.footer-bottom p {
+  color: #aaa;
+  margin: 0;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .footer {
+    padding: 40px 25px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .footer {
+    padding: 35px 20px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .footer-section {
+    align-items: center;
+  }
+
+  .footer-section h2 {
+    font-size: 22px;
+  }
+
+  .footer-section h3 {
+    font-size: 18px;
+  }
+
+  .footer-section p,
+  .footer-section a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+  }
+}
