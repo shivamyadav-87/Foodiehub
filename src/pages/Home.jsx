@@ -9,7 +9,7 @@ function Home() {
 const categories = [
   {
     name: "Pizza",
-    image: "/images/5.jpeg",
+    image: "/images/40.jpeg", 
   },
   {
     name: "Burger",
@@ -17,11 +17,11 @@ const categories = [
   },
   {
     name: "Chinese",
-    image: "/images/55.jpeg",
+    image: "/images/24.jpeg",
   },
   {
     name: "Biryani",
-    image: "/images/44.jpeg",
+    image:  "/images/19.jpeg",
   },
   {
     name: "Desserts",
