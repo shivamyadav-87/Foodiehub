@@ -22,8 +22,8 @@ function Footer() {
 
         <div className="footer-section">
           <h3>Categories</h3>
-          <p>Pizza</p>
-          <p>Burger</p>
+          <a href="/menu?category=Pizza">Pizza</a>
+<a href="/menu?category=Burger">Burger</a>
           <p>Biryani</p>
           <p>Chinese</p>
         </div>

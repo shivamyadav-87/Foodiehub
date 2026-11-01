@@ -1,6 +1,10 @@
+
 .home {
   min-height: 100vh;
   background: #f8f8f8;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* =========================
@@ -35,6 +39,7 @@
   line-height: 1.15;
   margin: 10px 0;
   color: #222;
+  overflow-wrap: break-word;
 }
 
 .hero-text {
@@ -58,7 +63,6 @@
   background: #c92f3b;
 }
 
-
 /* =========================
    CATEGORIES
 ========================= */
@@ -66,6 +70,7 @@
 .categories {
   padding: 50px 7%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .categories h2,
@@ -81,16 +86,18 @@
 
 .category-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 20px;
 }
 
 .category-card {
+  min-width: 0;
   background: white;
   padding: 25px 15px;
   border-radius: 12px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .category-card:hover {
@@ -119,6 +126,21 @@
   background: #e63946;
 }
 
+/* CATEGORY IMAGE */
+
+.category-image {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 /* =========================
    POPULAR FOOD
@@ -128,16 +150,18 @@
   padding: 50px 7%;
   text-align: center;
   background: #fff;
+  box-sizing: border-box;
 }
 
 .food-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
 
 .food-card {
+  min-width: 0;
   background: white;
   border-radius: 12px;
   overflow: hidden;
@@ -166,10 +190,12 @@
 .food-info {
   padding: 18px;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .food-info h3 {
   margin: 0 0 5px;
+  overflow-wrap: anywhere;
 }
 
 .food-info p {
@@ -179,6 +205,7 @@
 .food-bottom {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   margin: 15px 0;
   font-weight: bold;
 }
@@ -197,7 +224,6 @@
   background: #c92f3b;
 }
 
-
 /* =========================
    TABLET
 ========================= */
@@ -209,20 +235,20 @@
   }
 
   .category-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .food-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-}
 
+}
 
 /* =========================
    MOBILE
 ========================= */
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
 
   .hero {
     padding: 50px 15px;
@@ -254,34 +280,80 @@
 
   .categories h2,
   .popular-food h2 {
-    font-size: 28px;
+    font-size: 26px;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .food-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .category-card {
+    padding: 15px 10px;
+  }
+
+  .category-icon {
+    font-size: 38px;
+  }
+
+  .category-image {
+    height: 120px;
+  }
+
+  .food-image {
+    height: 150px;
+  }
+
+  .food-info {
+    padding: 12px;
+  }
+
+  .food-info h3 {
+    font-size: 15px;
+  }
+
+  .food-info p {
+    font-size: 13px;
+  }
+
+  .food-info button {
+    font-size: 12px;
+    padding: 9px 5px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+  .hero h1 {
+    font-size: 25px;
+  }
+
+  .categories,
+  .popular-food {
+    padding: 30px 10px;
   }
 
   .category-list,
   .food-list {
     grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .category-card {
-    padding: 20px;
   }
 
   .food-image {
-    height: 200px;
+    height: 190px;
   }
-}
 
-.category-image {
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 10px;
-}
+  .food-info {
+    padding: 15px;
+  }
 
-.category-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }

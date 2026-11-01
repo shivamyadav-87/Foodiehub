@@ -144,3 +144,44 @@
     font-size: 26px;
   }
 }
+
+
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .checkout-page {
+    padding: 35px 20px;
+  }
+
+  .checkout-box {
+    width: 100%;
+    max-width: 550px;
+  }
+}
+
+/* EXTRA SMALL MOBILE */
+
+@media (max-width: 350px) {
+  .checkout-box {
+    padding: 20px 14px;
+  }
+
+  .checkout-box h1 {
+    font-size: 23px;
+  }
+
+  .checkout-box input,
+  .checkout-box textarea,
+  .checkout-box select {
+    font-size: 14px;
+  }
+
+  .success-box {
+    padding: 25px 14px;
+  }
+
+  .success-box h1 {
+    font-size: 22px;
+  }
+}

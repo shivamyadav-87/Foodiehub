@@ -1,13 +1,26 @@
-import { createContext, useContext, useState } from "react";
+
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
+  // Cart automatically update and save
+  useEffect(() => {
+    localStorage.setItem("foodieCart", JSON.stringify(cart));
+  }, [cart]);
+
   const addToCart = (food) => {
     setCart((oldCart) => {
-      const existingFood = oldCart.find((item) => item.id === food.id);
+      const existingFood = oldCart.find(
+        (item) => item.id === food.id
+      );
 
       if (existingFood) {
         return oldCart.map((item) =>
@@ -47,14 +60,28 @@ export function CartProvider({ children }) {
     );
   };
 
+  // Clear cart on logout
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("foodieCart");
+  };
+
+  // Total cart quantity
+  const cartCount = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <CartContext.Provider
       value={{
         cart,
+        cartCount,
         addToCart,
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
+        clearCart,
       }}
     >
       {children}

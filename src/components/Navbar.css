@@ -1,40 +1,216 @@
+
 /* =========================
    NAVBAR
 ========================= */
 
 .navbar {
+  width: 100%;
   min-height: 70px;
-  padding: 0 7%;
+  padding: 10px 7%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
   white-space: nowrap;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
   color: #e63946;
 }
 
+/* =========================
+   CART BADGE
+========================= */
+
+.nav-links .cart-link {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cart-badge {
+  min-width: 21px;
+  height: 21px;
+  padding: 0 5px;
+  border-radius: 50px;
+  background: #e63946;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+.profile-dropdown {
+  position: relative;
+}
+
+.logout-trigger {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 10px;
+  width: 230px;
+  max-width: calc(100vw - 20px);
+  z-index: 9999;
+}
+
+.profile-dropdown:hover .dropdown-menu,
+.profile-dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+.profile-info {
+  background: white;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  border-radius: 9px 9px 0 0;
+}
+
+.profile-info strong {
+  font-size: 16px;
+  color: #222;
+  overflow-wrap: anywhere;
+}
+
+.profile-info span {
+  font-size: 12px;
+  color: #777;
+  overflow-wrap: anywhere;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #eee;
+}
+
+.dropdown-logout {
+  width: 100%;
+  padding: 13px 16px;
+  text-align: left;
+  background: white;
+  color: #e63946;
+  border: none;
+  border-radius: 0 0 9px 9px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.dropdown-logout:hover {
+  background: #fff1f2;
+}
+
+/* =========================
+   LOGOUT CONFIRMATION
+========================= */
+
+.logout-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.logout-modal {
+  background: white;
+  width: 100%;
+  max-width: 380px;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+}
+
+.logout-modal h2 {
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.logout-modal p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.logout-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 11px 22px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cancel-btn {
+  background: #eee;
+  color: #333;
+}
+
+.confirm-btn {
+  background: #e63946;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #c92d39;
+}
 
 /* =========================
    TABLET
@@ -43,7 +219,7 @@
 @media (max-width: 768px) {
 
   .navbar {
-    padding: 10px 5%;
+    padding: 12px 4%;
   }
 
   .logo {
@@ -51,14 +227,14 @@
   }
 
   .nav-links {
-    gap: 18px;
+    gap: 15px;
   }
 
   .nav-links a {
     font-size: 14px;
   }
-}
 
+}
 
 /* =========================
    MOBILE
@@ -67,7 +243,7 @@
 @media (max-width: 500px) {
 
   .navbar {
-    padding: 10px 15px;
+    padding: 12px 10px;
     flex-direction: column;
     gap: 12px;
   }
@@ -79,10 +255,62 @@
   .nav-links {
     width: 100%;
     justify-content: center;
-    gap: 18px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .nav-links a {
+    font-size: 13px;
+  }
+
+  .logout-trigger {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+
+  .dropdown-menu {
+    right: 0;
+    width: 210px;
+  }
+
+  .profile-info {
+    padding: 13px;
+  }
+
+  .profile-info strong {
     font-size: 14px;
   }
+
+  .profile-info span {
+    font-size: 11px;
+  }
+
+  .logout-modal {
+    padding: 23px 17px;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL MOBILE
+========================= */
+
+@media (max-width: 350px) {
+
+  .navbar {
+    padding: 10px 7px;
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
 }
